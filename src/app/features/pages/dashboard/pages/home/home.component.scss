@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    margin: 20px auto;
+}
+
+h1 {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.new-button {
+    position: inherit;
+    left: 100%;
+    transform: translate(-100%);
+}
+
+.form-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

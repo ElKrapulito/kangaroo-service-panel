@@ -13,32 +13,32 @@ export class SideBarComponent implements OnInit {
   @ViewChild('drawer') public drawer!: MatDrawer;
   linksList: NavLink[] = [
     {
-      route: '/auth',
-      text: 'Ingresar',
-      icon: 'key',
+      route: '/dashboard/home',
+      text: 'Home',
+      icon: 'house',
       protection: LinkType.NOAUTH,
     },
     {
-      route: '/users',
-      text: 'Usuarios',
+      route: '/account',
+      text: 'Accounts',
       icon: 'person',
       protection: LinkType.PROTECTED,
     },
+    // {
+    //   route: '/vets',
+    //   text: 'Veterinarios',
+    //   icon: 'domain',
+    //   protection: LinkType.PROTECTED,
+    // },
     {
-      route: '/vets',
-      text: 'Veterinarios',
-      icon: 'domain',
-      protection: LinkType.PROTECTED,
-    },
-    {
-      route: '/services',
-      text: 'Servicios',
+      route: '/category',
+      text: 'Categories',
       icon: 'star',
       protection: LinkType.PROTECTED,
     },
     {
-      route: '/appointments',
-      text: 'Citas',
+      route: '/transaction',
+      text: 'Transactions',
       icon: 'calendar_month',
       protection: LinkType.PROTECTED,
     },
