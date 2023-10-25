@@ -1,0 +1,6 @@
+<div class="container">
+  <app-nav-bar (onHamClick)="toggleSide($event)"></app-nav-bar>
+  <app-side-bar #side>
+    <ng-content></ng-content>
+  </app-side-bar>
+</div>
