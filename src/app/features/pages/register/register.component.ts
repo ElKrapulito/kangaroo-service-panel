@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserHttpService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,11 @@ import { UserHttpService } from '../../services/user.service';
 export class RegisterComponent implements OnInit {
   public modelForm: FormGroup;
   public hide: boolean;
-  constructor(private fb: FormBuilder, private userService: UserHttpService) {
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserHttpService,
+    private router: Router
+  ) {
     this.modelForm = this.fb.group({});
     this.hide = true;
   }
@@ -30,6 +35,8 @@ export class RegisterComponent implements OnInit {
 
     const data = this.modelForm.value;
 
-    this.userService.create(data).subscribe();
+    this.userService.create(data).subscribe(() => {
+      this.router.navigate(['/auth']);
+    });
   }
 }

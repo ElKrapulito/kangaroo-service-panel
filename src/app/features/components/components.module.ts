@@ -4,12 +4,14 @@ import { TransactionFormComponent } from './transaction-form/transaction-form.co
 import { SharedModule } from '../../shared/shared.module';
 import { AccountFormComponent } from './account-form/account-form.component';
 import { TransferFormComponent } from './transfer-form/transfer-form.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 @NgModule({
   declarations: [
     TransactionFormComponent,
     AccountFormComponent,
     TransferFormComponent,
+    CategoryFormComponent,
   ],
   imports: [CommonModule, SharedModule],
 })

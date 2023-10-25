@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { NavLink } from '../../models/nav-link.interface';
 import { LinkType } from '../../enum/link-type.enum';
+import { AuthService } from 'src/app/features/services/auth.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -24,12 +25,12 @@ export class SideBarComponent implements OnInit {
       icon: 'person',
       protection: LinkType.PROTECTED,
     },
-    // {
-    //   route: '/dashboard/category',
-    //   text: 'Categories',
-    //   icon: 'star',
-    //   protection: LinkType.PROTECTED,
-    // },
+    {
+      route: '/dashboard/category',
+      text: 'Categories',
+      icon: 'star',
+      protection: LinkType.PROTECTED,
+    },
     // {
     //   route: '/transaction',
     //   text: 'Transactions',
@@ -37,11 +38,15 @@ export class SideBarComponent implements OnInit {
     //   protection: LinkType.PROTECTED,
     // },
   ];
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   diplayNavLink(protectionType: NavLink) {
     return true;
+  }
+
+  logOut() {
+    this.authService.logOut();
   }
 }

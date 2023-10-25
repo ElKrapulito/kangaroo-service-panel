@@ -1,0 +1,23 @@
+<div class="form">
+  <h1>Category Form</h1>
+  <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="categoryForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <div class="form-action-buttons">
+      <button
+        [disabled]="!categoryForm.valid"
+        type="submit"
+        mat-flat-button
+        color="primary"
+      >
+        Save
+      </button>
+      <button type="button" color="warn" mat-dialog-close mat-stroked-button>
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

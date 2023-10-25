@@ -18,6 +18,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./pages/account/account.module').then((m) => m.AccountModule),
       },
+      {
+        path: 'category',
+        loadChildren: () =>
+          import('./pages/category/category.module').then(
+            (m) => m.CategoryModule
+          ),
+      },
     ],
   },
 ];
