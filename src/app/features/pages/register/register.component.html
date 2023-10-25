@@ -1,28 +1,22 @@
 <div class="form">
   <h1>Register</h1>
-  <form #form="ngForm" [formGroup]="modelForm">
+  <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="modelForm">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" placeholder="Your name here" />
-      <!-- <mat-error *ngIf="false">{{
-        getErrorMessage(modelForm.controls["name"])
-      }}</mat-error> -->
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" />
+      <input matInput formControlName="dateOfBirth" [matDatepicker]="picker" />
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle
         matIconSuffix
         [for]="picker"
       ></mat-datepicker-toggle>
-      <mat-datepicker formControlName="dateOfBirth" #picker></mat-datepicker>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
       <input matInput placeholder="pat@example.com" formControlName="email" />
-      <!-- <mat-error *ngIf="modelForm.controls['email'].invalid">{{
-        getErrorMessage(modelForm.controls["email"])
-      }}</mat-error> -->
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>

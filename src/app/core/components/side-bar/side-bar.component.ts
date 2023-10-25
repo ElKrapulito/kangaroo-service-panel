@@ -19,19 +19,13 @@ export class SideBarComponent implements OnInit {
       protection: LinkType.NOAUTH,
     },
     {
-      route: '/account',
+      route: '/dashboard/account',
       text: 'Accounts',
       icon: 'person',
       protection: LinkType.PROTECTED,
     },
-    // {
-    //   route: '/vets',
-    //   text: 'Veterinarios',
-    //   icon: 'domain',
-    //   protection: LinkType.PROTECTED,
-    // },
     {
-      route: '/category',
+      route: '/dashboard/category',
       text: 'Categories',
       icon: 'star',
       protection: LinkType.PROTECTED,
