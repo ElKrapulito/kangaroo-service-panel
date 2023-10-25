@@ -1,0 +1,68 @@
+<div class="form">
+  <h1>Register</h1>
+  <form #form="ngForm" [formGroup]="modelForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Your name here" />
+      <!-- <mat-error *ngIf="false">{{
+        getErrorMessage(modelForm.controls["name"])
+      }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker formControlName="dateOfBirth" #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" />
+      <!-- <mat-error *ngIf="modelForm.controls['email'].invalid">{{
+        getErrorMessage(modelForm.controls["email"])
+      }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        type="button"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <!-- <mat-error *ngIf="false">{{
+        getErrorMessage(modelForm.controls["password"])
+      }}</mat-error> -->
+    </mat-form-field>
+
+    <div class="form-action-buttons">
+      <button
+        [disabled]="!modelForm.valid"
+        type="submit"
+        mat-flat-button
+        color="primary"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        color="warn"
+        mat-stroked-button
+        [routerLink]="['/auth']"
+      >
+        Back
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,5 @@
 <div class="example-container">
-  <h1>Ingresar</h1>
+  <h1>Log In</h1>
   <form [formGroup]="authForm">
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
@@ -14,7 +14,7 @@
         }}</mat-error> -->
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
+      <mat-label>Password</mat-label>
       <input
         matInput
         formControlName="password"
@@ -33,13 +33,23 @@
         <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
       </button>
     </mat-form-field>
-    <button
-      [disabled]="!authForm.valid"
-      type="submit"
-      mat-flat-button
-      color="primary"
-    >
-      Ingresar
-    </button>
+    <div class="form-action-buttons">
+      <button
+        [disabled]="!authForm.valid"
+        type="submit"
+        mat-flat-button
+        color="primary"
+      >
+        Sign In
+      </button>
+      <button
+        [routerLink]="['/register']"
+        type="button"
+        mat-flat-button
+        color="secondary"
+      >
+        Register
+      </button>
+    </div>
   </form>
 </div>

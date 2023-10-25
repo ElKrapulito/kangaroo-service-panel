@@ -15,6 +15,13 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./features/pages/register/register.module').then(
+        (m) => m.RegisterModule
+      ),
+  },
 ];
 
 @NgModule({
