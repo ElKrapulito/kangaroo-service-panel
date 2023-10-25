@@ -24,18 +24,18 @@ export class SideBarComponent implements OnInit {
       icon: 'person',
       protection: LinkType.PROTECTED,
     },
-    {
-      route: '/dashboard/category',
-      text: 'Categories',
-      icon: 'star',
-      protection: LinkType.PROTECTED,
-    },
-    {
-      route: '/transaction',
-      text: 'Transactions',
-      icon: 'calendar_month',
-      protection: LinkType.PROTECTED,
-    },
+    // {
+    //   route: '/dashboard/category',
+    //   text: 'Categories',
+    //   icon: 'star',
+    //   protection: LinkType.PROTECTED,
+    // },
+    // {
+    //   route: '/transaction',
+    //   text: 'Transactions',
+    //   icon: 'calendar_month',
+    //   protection: LinkType.PROTECTED,
+    // },
   ];
   constructor() {}
 

@@ -1,14 +1,24 @@
 <div class="container">
   <h1>Accounts</h1>
+  <div class="action-buttons">
+    <button
+      type="button"
+      mat-flat-button
+      color="primary"
+      (click)="createAccount()"
+    >
+      Create Account
+    </button>
 
-  <button
-    type="button"
-    mat-flat-button
-    color="primary"
-    (click)="createAccount()"
-  >
-    Create Account
-  </button>
+    <button
+      type="button"
+      mat-flat-button
+      color="secondary"
+      (click)="createTransference()"
+    >
+      Create Transference
+    </button>
+  </div>
 
   <table
     *ngIf="$accountsList | async"

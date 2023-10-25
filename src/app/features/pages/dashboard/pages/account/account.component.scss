@@ -21,9 +21,9 @@ h1 {
     transform: translate(-100%);
 }
 
-.form-filters {
+.action-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 }

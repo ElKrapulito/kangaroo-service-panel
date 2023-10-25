@@ -5,6 +5,7 @@ import { IAccount } from 'src/app/features/interfaces/account.interface';
 import { AccountHttpService } from 'src/app/features/services/account.service';
 import { AuthService } from 'src/app/features/services/auth.service';
 import { AccountFormComponent } from '../../../../components/account-form/account-form.component';
+import { TransferFormComponent } from 'src/app/features/components/transfer-form/transfer-form.component';
 
 @Component({
   selector: 'app-account',
@@ -35,6 +36,13 @@ export class AccountComponent implements OnInit {
 
   createAccount() {
     const dialog = this.dialog.open(AccountFormComponent);
+    dialog.afterClosed().subscribe(() => {
+      this.setUp();
+    });
+  }
+
+  createTransference() {
+    const dialog = this.dialog.open(TransferFormComponent);
     dialog.afterClosed().subscribe(() => {
       this.setUp();
     });
